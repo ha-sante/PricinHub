@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Hub</title>
+
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='template.css') }}">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJ2Y_QBkrrXtUsy_iOopz4zZbLjdpSJW4_1uG9sDaz-t9f5bXd" sizes="16x16">
+
+</head>
+
+<body>
+
+  <!-- partial:index.partial.html -->
+  <nav>
+    <header> Gas Prices </header>
+    <section>
+      <!-- <header>Main</header> -->
+      <ul>
+
+        <li class="active">Henry Hub</li>
+
+      </ul>
+    </section>
+
+  </nav>
+  <article>
+    <header>
+      <div class="title">Dashboard</div>
+      <div class="user"></div>
+      <div class="interval">
+        <ul>
+
+          <li class="active greenDownloadBtn" onclick="openCSVDownload()" >  Download CSV of Pricing Data </li>
+          <!-- <li>Monthly</li> -->
+          <li class="active">Daily</li>
+        </ul>
+      </div>
+    </header>
+    <section>
+      <div class="chart">
+
+        <!-- <div id="view"></div> -->
+        <canvas id="myChart" width="800" height="200"></canvas>
+
+
+      </div>
+    </section>
+    <br>
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th> Date </th>
+            <th>Price </th>
+            <th id="loader_loding">
+              <div class="loader"></div>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="pricing_data_table">
+
+
+        </tbody>
+      </table>
+    </section>
+  </article>
+  <!-- partial -->
+
+  <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+
+</html>
